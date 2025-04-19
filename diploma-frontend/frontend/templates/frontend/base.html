@@ -36,9 +36,9 @@
         <div class="row ControlPanel-row">
           <div class="row-block">
             <div class="row ControlPanel-rowSplit">
-              <div class="row-block"><a class="ControlPanel-title" href="#">Free delivery</a>
+              <div class="row-block"><a class="ControlPanel-title" href="#">бесплатная доставка</a>
               </div>
-              <div class="row-block hide_700"><span class="ControlPanel-title">Follow Us</span>
+              <div class="row-block hide_700"><span class="ControlPanel-title">Подписывайтесь на нас в соц.сетях</span>
                 <ul class="menu menu_img menu_smallImg ControlPanel-menu">
                   <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/fb.svg' %}" alt="fb.svg"/></a></li>
                   <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/tw.svg' %}" alt="tw.svg"/></a></li>
@@ -56,7 +56,7 @@
                     <a class="ControlPanel-title" href="/profile">{{ user.username }}</a>
                   </div>
                   <div class="row-block">
-                    <a class="ControlPanel-title" href="#" @click.prevent="signOut()">Log out</a>
+                    <a class="ControlPanel-title" href="#" @click.prevent="signOut()">Выйти</a>
                   </div>
                 {% else %}
                   <div class="row-block"><a class="ControlPanel-title" href="/sign-in">Login / Register</a></div>
@@ -76,9 +76,9 @@
               <li class="menu-item"><a class="menu-link" href="/">Главная</a>
               </li>
 
-              <li class="menu-item"><a class="menu-link" href="/sale">Sale</a>
+              <li class="menu-item"><a class="menu-link" href="/sale">Скидки и акции</a>
               </li>
-              <li class="menu-item"><span class="menu-label menu-label_success">Hot</span><a class="menu-link" href="/catalog">Catalog</a>
+              <li class="menu-item"><span class="menu-label menu-label_success">Новое</span><a class="menu-link" href="/catalog">Catalog</a>
               </li>
 
 <!--              <li class="menu-item"><a class="menu-link" href="/catalog">Purchase</a>-->
@@ -109,7 +109,7 @@
           <div class="CategoriesButton">
             <div class="CategoriesButton-title">
               <div class="CategoriesButton-icon"><img src="{% static 'frontend/assets/img/icons/allDep.svg' %}" alt="allDep.svg"/>
-              </div><span class="CategoriesButton-text">All Departments</span>
+              </div><span class="CategoriesButton-text">ВСЕ КАТЕГОРИИ</span>
               <div class="CategoriesButton-arrow">
               </div>
             </div>
@@ -143,7 +143,7 @@
         <div class="Header-search">
           <div class="search">
             <form class="form form_search"  @submit.prevent="search">
-              <input class="search-input" id="query" name="query" type="text" v-model="searchText" placeholder="What are you looking for ..."/>
+              <input class="search-input" id="query" name="query" type="text" v-model="searchText" placeholder="Поиск по сайту"/>
               <button class="search-button" type="submit" name="search" id="search"><img src="{% static 'frontend/assets/img/icons/search.svg' %}" alt="search.svg"/>Search
               </button>
             </form>
@@ -208,29 +208,8 @@
         <div class="row-block">
           <strong class="Footer-title">Contacts
           </strong>
-          <p>Phone: 8.800.200.600<br>Email: Support@ninzio.com<br>Skype: techno<br>Address: New York, north<br>Avenue 26/7<br>0057
+          <p>Email: Support@fintek.com<br>Skype: techno<br>Адрес: 	630007,<br> Новосибирская Область, <br> г.о. Город Новосибирск, <br> г Новосибирск, пер Пристанский, <br> зд. 5, к. 14
           </p>
-        </div>
-      </div>
-    </div>
-    <div class="Footer-copy">
-      <div class="wrap">
-        <div class="row row_space">
-          <div class="row-block">© Copyright&#32;<a href="#">Megano Store.</a>&#32;All rights reserved.
-          </div>
-          <div class="row-block"><span>Accepted Payments</span>
-            <div class="Footer-payments">
-              <div><img src="{% static 'frontend/assets/img/payments/visa.png' %}" alt="visa.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/mastercard.png' %}" alt="mastercard.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/paypal.png' %}" alt="paypal.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/american.png' %}" alt="american.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/electron.png' %}" alt="electron.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/maestro.png' %}" alt="maestro.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/delta.png' %}" alt="delta.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/e.png' %}" alt="e.png"/></div>
-              <div><img src="{% static 'frontend/assets/img/payments/dk.png' %}" alt="dk.png"/></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
