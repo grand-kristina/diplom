@@ -17,3 +17,7 @@ class CatalogItem(models.Model):
     class Meta:
         verbose_name = "Каталог"
         verbose_name_plural = "Каталог"
+
+    def __str__(self):
+        parent_title = self.parent.title if self.parent else ''
+        return f'{self.title} - {parent_title}'

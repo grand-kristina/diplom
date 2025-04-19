@@ -10,6 +10,10 @@ class Specification(models.Model):
     class Meta:
         verbose_name = "Спецификация"
         verbose_name_plural = "Спецификации"
+    
+        
+    def __str__(self):
+        return f'{self.name} - {self.value}'
 
 
 class Review(models.Model):
@@ -62,6 +66,10 @@ class ProductShort(models.Model):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
+    
+        
+    def __str__(self):
+        return f'{self.title}'
 
 
 class SaleItem(models.Model):
@@ -87,3 +95,7 @@ class SaleItem(models.Model):
     class Meta:
         verbose_name = "Акционный товар"
         verbose_name_plural = "Акционные товары"
+    
+        
+    def __str__(self):
+        return f'{self.title}'

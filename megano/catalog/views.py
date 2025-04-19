@@ -47,7 +47,6 @@ class CatalogView(APIView):
         order_by = sort if sort_type == "inc" else f"-{sort}"
 
         offset = (current_page - 1) * limit
-
         products = ProductShort.objects.filter(filters).order_by(order_by)
         paginated_products = products[offset : offset + limit]
 

@@ -17,6 +17,9 @@ class Avatar(models.Model):
     class Meta:
         verbose_name = "Аватар"
         verbose_name_plural = "Аватары"
+    
+    def __str__(self):
+        return f'{self.alt}'
 
 
 class Profile(models.Model):
