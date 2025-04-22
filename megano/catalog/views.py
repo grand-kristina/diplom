@@ -20,6 +20,7 @@ class CategoriesView(APIView):
 
 class CatalogView(APIView):
     def get(self, request: Request) -> Response:
+        category = request.query_params.get('category')
         name_filter = request.query_params.get("filter[name]", "").strip()
         min_price = request.query_params.get("filter[minPrice]", 0)
         max_price = request.query_params.get("filter[maxPrice]", 50000)
@@ -43,6 +44,8 @@ class CatalogView(APIView):
             filters &= Q(freeDelivery=True)
         if available:
             filters &= Q(count__gt=0)
+        if category:
+            filters &= Q(category__id=int(category))
 
         order_by = sort if sort_type == "inc" else f"-{sort}"
 
