@@ -22,7 +22,6 @@ class OrderView(APIView):
         serializer = OrderSerializer(orders, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @transaction.atomic
     def post(self, request: Request) -> Response:
         data = request.data
         product_obj = []
@@ -60,7 +59,6 @@ class OrderByIdView(APIView):
         print(serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @transaction.atomic
     def post(self, request: Request, pk: int) -> Response:
         data = request.data
 
