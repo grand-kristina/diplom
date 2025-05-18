@@ -409,11 +409,63 @@
     display: flex;
   }
 }
-.BannersHomeBlock-block {
-  width: auto;
+/* Основной контейнер */
+.BannersHomeBlock-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
 }
+
+/* Блоки внутри контейнера */
+.BannersHomeBlock-block {
+  min-width: 0; /* Критическое свойство, позволяющее сжиматься ниже min-content */
+  overflow: hidden; /* Обрезает содержимое */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid transparent; /* Добавляем прозрачную границу для визуального контроля */
+}
+
+/* Специальное правило для первого блока */
 .BannersHomeBlock-block:first-child {
   min-width: 180px;
+  max-width: calc(180px + 10%); /* Ограничиваем максимальную ширину */
+}
+
+/* Все внутренние элементы блоков */
+.BannersHomeBlock-block > * {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Специфичные стили для типичных внутренних элементов */
+.BannersHomeBlock-block img,
+.BannersHomeBlock-block video,
+.BannersHomeBlock-block iframe {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+.BannersHomeBlock-block div,
+.BannersHomeBlock-block p,
+.BannersHomeBlock-block span {
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 768px) {
+  .BannersHomeBlock-row {
+    grid-template-columns: 1fr; /* Один столбец на маленьких экранах */
+  }
+  
+  .BannersHomeBlock-block:first-child {
+    max-width: 100%; /* На маленьких экранах позволяем занять всю ширину */
+  }
 }
 .BannersHomeBlock-img {
   height: 175px;

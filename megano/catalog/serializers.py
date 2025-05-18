@@ -38,6 +38,8 @@ class CatalogSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True)
     reviews = ReviewsSerializer(many=True, source="product_reviews")
     rating = serializers.SerializerMethodField()
+    title = serializers.SerializerMethodField()
+
 
     class Meta:
         model = ProductShort
@@ -55,6 +57,11 @@ class CatalogSerializer(serializers.ModelSerializer):
             "reviews",
             "rating",
         ]
+    
+    @staticmethod
+    def get_title(obj):
+        print(obj.title[:3])
+        return obj.title[:20]
 
     @staticmethod
     def get_reviews(obj):
