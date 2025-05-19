@@ -94,6 +94,7 @@ createApp({
 		// 		})
 		// },
 		addToBasket(item, count = 1) {
+			alert('Товар добавлен в корзину')
 			const { id } = item
 			this.postData('/api/basket/', { id, count })
 				.then(({ data }) => {
@@ -127,18 +128,19 @@ createApp({
 	},
 	computed: {
 		basketCount() {
-			return (
-				(this.basket &&
-					Object.values(this.basket)?.reduce(
-						(acc, { count, price }) => {
-							acc.count += count
-							acc.price += count * price
-							return acc
-						},
-						{ count: 0, price: 0 }
-					)) ?? { count: 0, price: 0 }
+			if (!this.basket) {
+				return { count: 0, price: 0 }
+			}
+			
+			return Object.values(this.basket).reduce(
+				(acc, { count, price }) => {
+				acc.count += count
+				acc.price += count * price
+				return acc
+				},
+				{ count: 0, price: 0 }
 			)
-		},
+		}
 	},
 	data() {
 		return {
